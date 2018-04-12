@@ -1,10 +1,7 @@
-# Inspired by https://github.com/mumoshu/dcind
-FROM docker:dind
+FROM docker:18.03-dind
+MAINTAINER pstory@andrew.cmu.edu
 
-LABEL maintainer.1="André Hähnel <andre.haehnel@netresearch.de>" \
-      maintainer.2="Sebastian Mendel <sebastian.mendel@netresearch.de>"
-
-ENV DOCKER_COMPOSE_VERSION=1.19.0 \
+ENV DOCKER_COMPOSE_VERSION=1.20.1 \
     ENTRYKIT_VERSION=0.4.0
 
 # Install Docker and Docker Compose
