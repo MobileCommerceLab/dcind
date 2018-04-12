@@ -1,12 +1,10 @@
 # dcind (Docker-Compose-in-Docker)
 
-[![](https://images.microbadger.com/badges/image/netresearch/dcind.svg)](http://microbadger.com/images/netresearch/dcind "Get your own image badge on microbadger.com")
-
 Inspired by: https://github.com/mumoshu/dcind
 
-Use this ```Dockerfile``` to build a base image for your integration tests in [Concourse CI](http://concourse.ci/). Alternatively, you can use a ready-to-use image from the Docker Hub: [netresearch/dcind](https://hub.docker.com/r/netresearch/dcind/). The image is Alpine based.
+Use this ```Dockerfile``` to build a base image for your integration tests in [Concourse CI](http://concourse.ci/). Alternatively, you can use a ready-to-use image from the Docker Hub: [mobilecommercelab/dcind](https://hub.docker.com/r/mobilecommercelab/dcind/).
 
-Here is an example of a Concourse [job](http://concourse.ci/concepts.html) that uses ```netresearch/dcind``` image to run a bunch of containers in a task, and then runs the integration test suite. You can find a full version of this example in the [```example```](example) directory.
+Here is an example of a Concourse [job](http://concourse.ci/concepts.html) that uses ```mobilecommercelab/dcind``` image to run a bunch of containers in a task, and then runs the integration test suite. You can find a full version of this example in the [```example```](example) directory.
 
 ```yaml
   - name: integration
@@ -27,7 +25,7 @@ Here is an example of a Concourse [job](http://concourse.ci/concepts.html) that 
           image_resource:
             type: docker-image
             source:
-              repository: netresearch/dcind
+              repository: mobilecommercelab/dcind
           inputs:
             - name: code
             - name: redis
