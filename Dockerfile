@@ -21,6 +21,12 @@ RUN apk --update --no-cache add \
  && chmod +x entrykit \
  && mv entrykit /bin/entrykit \
  && entrykit --symlink \
+# Install Bash, Git, and Git LFS
+ && apk add --no-cache bash git openssl \
+ && wget -qO- https://github.com/git-lfs/git-lfs/releases/download/v2.1.1/git-lfs-linux-amd64-2.1.1.tar.gz | tar xz \
+ && mv git-lfs-*/git-lfs /usr/bin/ \
+ && rm -rf git-lfs-* \
+ && git lfs install \
 # cleanup
  && rm -rf /var/cache/apk/* \
  && rm -rf /root/.cache
